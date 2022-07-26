@@ -1,2 +1,23 @@
-html {
+body {
+  background-color: #2f3169;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+}
+
+#timerTypeContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: #21234a;
+}
+
+.timerType {
+  p {
+    cursor: pointer;
+    color: white;
+  }
 }

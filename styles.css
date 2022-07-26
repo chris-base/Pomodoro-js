@@ -1,1 +1,34 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+body {
+  background-color: #2f3169;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1 {
+  color: white;
+}
+
+#timerTypeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #21234a;
+}
+
+.timerType p {
+  cursor: pointer;
+  color: white;
+}
+/*# sourceMappingURL=styles.css.map */
