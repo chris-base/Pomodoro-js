@@ -5,19 +5,60 @@ body {
   align-items: center;
 }
 
-h1 {
-  color: white;
+#appHeader {
+  margin: 50px 0 30px 0;
+
+  h1 {
+    color: white;
+  }
 }
 
 #timerTypeContainer {
   display: flex;
   flex-direction: row;
   background-color: #21234a;
+  border-radius: 30px;
+  padding: 3px 3px;
 }
 
 .timerType {
+  cursor: pointer;
+  background-color: rgba(200, 10, 10, 0.5);
+  border-radius: 30px;
+  padding: 0 25px;
+  margin: 0 1px;
+
   p {
-    cursor: pointer;
     color: white;
   }
+}
+
+#timerContainer {
+  background-color: #21234a;
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+}
+
+#timerTimeText {
+}
+
+#timerStartStopText {
+}
+
+#settingsButtonContainer {
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./public/settingsImg.svg");
+  margin-top: 30px;
 }
