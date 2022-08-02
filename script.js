@@ -1,3 +1,4 @@
+var runningInterval;
 let timerTime = 25;
 let currTimerType = 0;
 const themeColor1 = "#ff6257";
@@ -10,6 +11,8 @@ const pomodoroTypeChange = () => {
   document.getElementById("typeShort").style.backgroundColor = "transparent";
   document.getElementById("typeLong").style.backgroundColor = "transparent";
 
+  clearInterval(runningInterval);
+
   timerTime = 25;
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 };
@@ -20,7 +23,9 @@ const shortTypeChange = () => {
   document.getElementById("typePomo").style.backgroundColor = "transparent";
   document.getElementById("typeLong").style.backgroundColor = "transparent";
 
-  timerTime = 5;
+  clearInterval(runningInterval);
+
+  timerTime = 1;
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 };
 
@@ -29,6 +34,8 @@ const longTypeChange = () => {
   currTimerType = 2;
   document.getElementById("typeShort").style.backgroundColor = "transparent";
   document.getElementById("typePomo").style.backgroundColor = "transparent";
+
+  clearInterval(runningInterval);
 
   timerTime = 15;
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
@@ -50,4 +57,30 @@ document.getElementById("typeLong").addEventListener("click", function () {
   if (currTimerType !== 2) {
     longTypeChange();
   }
+});
+
+document.getElementById("timerTimeText").addEventListener("click", function () {
+  var minToMilli = 60000 * timerTime;
+  var countDownDate = new Date().getTime() + minToMilli;
+
+  runningInterval = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    console.log(distance);
+
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    if (seconds < 10) {
+      document.getElementById("timerTimeText").innerHTML = minutes + ":0" + seconds;
+    } else {
+      document.getElementById("timerTimeText").innerHTML = minutes + ":" + seconds;
+    }
+
+    if (distance < 0) {
+      clearInterval(runningInterval);
+      document.getElementById("timerTimeText").innerHTML = "EXPIRED";
+    }
+  }, 1000);
 });
