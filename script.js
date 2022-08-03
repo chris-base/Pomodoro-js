@@ -1,4 +1,4 @@
-var runningInterval;
+var runningInterval = null;
 let timerTime = 25;
 let currTimerType = 0;
 const themeColor1 = "#ff6257";
@@ -60,27 +60,35 @@ document.getElementById("typeLong").addEventListener("click", function () {
 });
 
 document.getElementById("timerTimeText").addEventListener("click", function () {
-  var minToMilli = 60000 * timerTime;
-  var countDownDate = new Date().getTime() + minToMilli;
+  if (runningInterval) {
+    document.getElementById("timerStartStopText").innerHTML = "Start";
+    clearInterval(runningInterval);
+    runningInterval = null;
+  } else {
+    document.getElementById("timerStartStopText").innerHTML = "Stop";
 
-  runningInterval = setInterval(function () {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
+    var minToMilli = 60000 * timerTime;
+    var countDownDate = new Date().getTime() + minToMilli;
 
-    console.log(distance);
+    runningInterval = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
 
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      console.log(distance);
 
-    if (seconds < 10) {
-      document.getElementById("timerTimeText").innerHTML = minutes + ":0" + seconds;
-    } else {
-      document.getElementById("timerTimeText").innerHTML = minutes + ":" + seconds;
-    }
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (distance < 0) {
-      clearInterval(runningInterval);
-      document.getElementById("timerTimeText").innerHTML = "EXPIRED";
-    }
-  }, 1000);
+      if (seconds < 10) {
+        document.getElementById("timerTimeText").innerHTML = minutes + ":0" + seconds;
+      } else {
+        document.getElementById("timerTimeText").innerHTML = minutes + ":" + seconds;
+      }
+
+      if (distance < 0) {
+        clearInterval(runningInterval);
+        document.getElementById("timerTimeText").innerHTML = "0:00";
+      }
+    }, 1000);
+  }
 });
