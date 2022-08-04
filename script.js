@@ -1,5 +1,6 @@
 var runningInterval = null;
 let timerTime = 25;
+var distance = 0;
 let currTimerType = 0;
 const themeColor1 = "#ff6257";
 
@@ -12,6 +13,7 @@ const pomodoroTypeChange = () => {
   document.getElementById("typeLong").style.backgroundColor = "transparent";
 
   clearInterval(runningInterval);
+  distance = 0;
 
   timerTime = 25;
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
@@ -24,6 +26,7 @@ const shortTypeChange = () => {
   document.getElementById("typeLong").style.backgroundColor = "transparent";
 
   clearInterval(runningInterval);
+  distance = 0;
 
   timerTime = 1;
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
@@ -36,6 +39,7 @@ const longTypeChange = () => {
   document.getElementById("typePomo").style.backgroundColor = "transparent";
 
   clearInterval(runningInterval);
+  distance = 0;
 
   timerTime = 15;
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
@@ -68,11 +72,16 @@ document.getElementById("timerTimeText").addEventListener("click", function () {
     document.getElementById("timerStartStopText").innerHTML = "Stop";
 
     var minToMilli = 60000 * timerTime;
-    var countDownDate = new Date().getTime() + minToMilli;
+
+    if (distance <= 0) {
+      var countDownDate = new Date().getTime() + minToMilli;
+    } else {
+      var countDownDate = new Date().getTime() + distance;
+    }
 
     runningInterval = setInterval(function () {
       var now = new Date().getTime();
-      var distance = countDownDate - now;
+      distance = countDownDate - now;
 
       console.log(distance);
 
