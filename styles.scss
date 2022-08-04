@@ -114,4 +114,12 @@ body {
   bottom: 0;
   left: 0;
   display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#settingsContainer {
+  background-color: $almost-white;
+  width: 500px;
+  border-radius: 10px;
 }

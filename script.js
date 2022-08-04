@@ -101,3 +101,7 @@ document.getElementById("timerTimeText").addEventListener("click", function () {
     }, 1000);
   }
 });
+
+document.getElementById("settingsButtonContainer").addEventListener("click", function () {
+  document.getElementById("settingsPageContainer").style.display = "flex";
+});
