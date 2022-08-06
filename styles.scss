@@ -122,4 +122,35 @@ body {
   background-color: $almost-white;
   width: 500px;
   border-radius: 10px;
+  padding: 20px 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.settingsHr {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#settingsHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#settingsHeaderText {
+  font-size: 28px;
+  font-weight: 800;
+  color: $almost-black;
+  margin: 0;
+}
+
+#settingsHeaderCloseButton {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./public/closeImg.svg");
 }

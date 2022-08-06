@@ -43,21 +43,36 @@
     <div id="settingsPageContainer">
       <div id="settingsContainer">
         <div id="settingsHeaderContainer">
-          <p>Settings</p>
-          <div>x</div>
+          <p id="settingsHeaderText">Settings</p>
+          <div id="settingsHeaderCloseButton"></div>
         </div>
 
-        <hr />
+        <hr class="settingsHr" />
 
-        <p>Time (minutes)</p>
+        <p id="settingsTimeTitleText">Time (minutes)</p>
 
-        <div id="settingsTimesContainer"></div>
+        <div id="settingsTimesContainer">
+          <div class="settingsTimeContainer">
+            <p class="settingsTimeTitleText">pomodoro</p>
+            <div class="settingsTimeEditText"></div>
+          </div>
 
-        <hr />
+          <div class="settingsTimeContainer">
+            <p class="settingsTimeTitleText">short break</p>
+            <div class="settingsTimeEditText"></div>
+          </div>
+
+          <div class="settingsTimeContainer">
+            <p class="settingsTimeTitleText">long break</p>
+            <div class="settingsTimeEditText"></div>
+          </div>
+        </div>
+
+        <hr class="settingsHr" />
 
         <div id="settingsFontContainer"></div>
 
-        <hr />
+        <hr class="settingsHr" />
 
         <div id="settingsColorContainer"></div>
 

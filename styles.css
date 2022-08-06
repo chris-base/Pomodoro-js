@@ -162,5 +162,41 @@ body {
   background-color: #fafafa;
   width: 500px;
   border-radius: 10px;
+  padding: 20px 30px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.settingsHr {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#settingsHeaderContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#settingsHeaderText {
+  font-size: 28px;
+  font-weight: 800;
+  color: #141414;
+  margin: 0;
+}
+
+#settingsHeaderCloseButton {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./public/closeImg.svg");
 }
 /*# sourceMappingURL=styles.css.map */
