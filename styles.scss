@@ -88,6 +88,8 @@ body {
   letter-spacing: 10px;
 }
 
+// SETTINGS
+
 #settingsButtonContainer {
   cursor: pointer;
   opacity: 0.5;
@@ -113,7 +115,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -130,6 +132,7 @@ body {
 
 .settingsHr {
   border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
 }
 
 #settingsHeaderContainer {
@@ -153,4 +156,40 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("./public/closeImg.svg");
+}
+
+#settingsTimeTitleText {
+  color: $almost-black;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+#settingsTimesContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settingsTimeContainer {
+  width: 100%;
+}
+
+.settingsTimeTitleText {
+  color: #757575;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.settingsTimeEditText {
+  background-color: #e0e0e0;
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
