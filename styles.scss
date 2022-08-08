@@ -148,6 +148,14 @@ body {
   margin: 0;
 }
 
+.settingsSubTitleText {
+  color: $almost-black;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 #settingsHeaderCloseButton {
   cursor: pointer;
   width: 30px;
@@ -159,11 +167,6 @@ body {
 }
 
 #settingsTimeTitleText {
-  color: $almost-black;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
 }
 
 #settingsTimesContainer {
@@ -182,7 +185,7 @@ body {
 }
 
 .settingsTimeEditText {
-  background-color: #e0e0e0;
+  background-color: $settingsGrey;
   width: 80%;
   border-radius: 10px;
   padding: 10px 15px;
@@ -192,4 +195,41 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+#settingsFontContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#settingsFontText {
+}
+
+#settingsFontChooserContainer {
+  display: flex;
+}
+
+.fontBox {
+  cursor: pointer;
+  background-color: $settingsGrey;
+  padding: 10px;
+  border-radius: 500px;
+  margin-left: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  p {
+    margin: 0;
+  }
+}
+
+#fontBoxOne {
+}
+
+#fontBoxTwo {
+}
+
+#fontBoxThree {
 }

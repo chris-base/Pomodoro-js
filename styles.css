@@ -193,6 +193,14 @@ body {
   margin: 0;
 }
 
+.settingsSubTitleText {
+  color: #141414;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 #settingsHeaderCloseButton {
   cursor: pointer;
   width: 30px;
@@ -201,14 +209,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("./public/closeImg.svg");
-}
-
-#settingsTimeTitleText {
-  color: #141414;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
 }
 
 #settingsTimesContainer {
@@ -240,5 +240,37 @@ body {
   font-size: 14px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+#settingsFontContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#settingsFontChooserContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fontBox {
+  cursor: pointer;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 500px;
+  margin-left: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fontBox p {
+  margin: 0;
 }
 /*# sourceMappingURL=styles.css.map */
