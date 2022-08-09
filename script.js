@@ -2,6 +2,7 @@ var runningInterval = null;
 let timerTime = 25;
 var distance = 0;
 let currTimerType = 0;
+let currFontType = 0;
 const themeColor1 = "#ff6257";
 
 document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
@@ -104,4 +105,55 @@ document.getElementById("timerTimeText").addEventListener("click", function () {
 
 document.getElementById("settingsButtonContainer").addEventListener("click", function () {
   document.getElementById("settingsPageContainer").style.display = "flex";
+});
+
+document.getElementById("fontBoxOne").addEventListener("click", function () {
+  if (currFontType !== 0) {
+    currFontType = 0;
+
+    document.getElementById("htmlId").style.fontFamily = "Roboto";
+
+    document.getElementById("fontBoxOne").style.backgroundColor = "#141414"; // $almost-black
+    document.getElementById("fontBoxOne").style.color = "#fafafa"; // $almost-white
+
+    document.getElementById("fontBoxTwo").style.backgroundColor = "#e0e0e0"; // $settingsGrey
+    document.getElementById("fontBoxTwo").style.color = "#141414"; // $almost-white
+
+    document.getElementById("fontBoxThree").style.backgroundColor = "#e0e0e0"; // $settingsGrey
+    document.getElementById("fontBoxThree").style.color = "#141414"; // $almost-white
+  }
+});
+
+document.getElementById("fontBoxTwo").addEventListener("click", function () {
+  if (currFontType !== 1) {
+    currFontType = 1;
+
+    document.getElementById("htmlId").style.fontFamily = "Montserrat";
+
+    document.getElementById("fontBoxTwo").style.backgroundColor = "#141414"; // $almost-black
+    document.getElementById("fontBoxTwo").style.color = "#fafafa"; // $almost-white
+
+    document.getElementById("fontBoxOne").style.backgroundColor = "#e0e0e0"; // $settingsGrey
+    document.getElementById("fontBoxOne").style.color = "#141414"; // $almost-white
+
+    document.getElementById("fontBoxThree").style.backgroundColor = "#e0e0e0"; // $settingsGrey
+    document.getElementById("fontBoxThree").style.color = "#141414"; // $almost-white
+  }
+});
+
+document.getElementById("fontBoxThree").addEventListener("click", function () {
+  if (currFontType !== 2) {
+    currFontType = 2;
+
+    document.getElementById("htmlId").style.fontFamily = "Fira Sans Condensed";
+
+    document.getElementById("fontBoxThree").style.backgroundColor = "#141414"; // $almost-black
+    document.getElementById("fontBoxThree").style.color = "#fafafa"; // $almost-white
+
+    document.getElementById("fontBoxOne").style.backgroundColor = "#e0e0e0"; // $settingsGrey
+    document.getElementById("fontBoxOne").style.color = "#141414"; // $almost-white
+
+    document.getElementById("fontBoxTwo").style.backgroundColor = "#e0e0e0"; // $settingsGrey
+    document.getElementById("fontBoxTwo").style.color = "#141414"; // $almost-white
+  }
 });
