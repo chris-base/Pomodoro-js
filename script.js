@@ -108,6 +108,10 @@ document.getElementById("settingsButtonContainer").addEventListener("click", fun
   document.getElementById("settingsPageContainer").style.display = "flex";
 });
 
+document.getElementById("settingsHeaderCloseButton").addEventListener("click", function () {
+  document.getElementById("settingsPageContainer").style.display = "none";
+});
+
 // Settings font picker
 
 document.getElementById("fontBoxOne").addEventListener("click", function () {
