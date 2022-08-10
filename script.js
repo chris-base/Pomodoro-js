@@ -1,15 +1,16 @@
 var runningInterval = null;
 let timerTime = 25;
 var distance = 0;
-let currTimerType = 0;
-let currFontType = 0;
+let currTimerTypeNum = 0;
+let currFontTypeNum = 0;
+let currColorTypeNum = 0;
 const themeColor1 = "#ff6257";
 
 document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 
 const pomodoroTypeChange = () => {
   document.getElementById("typePomo").style.backgroundColor = themeColor1;
-  currTimerType = 0;
+  currTimerTypeNum = 0;
   document.getElementById("typeShort").style.backgroundColor = "transparent";
   document.getElementById("typeLong").style.backgroundColor = "transparent";
 
@@ -22,7 +23,7 @@ const pomodoroTypeChange = () => {
 
 const shortTypeChange = () => {
   document.getElementById("typeShort").style.backgroundColor = themeColor1;
-  currTimerType = 1;
+  currTimerTypeNum = 1;
   document.getElementById("typePomo").style.backgroundColor = "transparent";
   document.getElementById("typeLong").style.backgroundColor = "transparent";
 
@@ -35,7 +36,7 @@ const shortTypeChange = () => {
 
 const longTypeChange = () => {
   document.getElementById("typeLong").style.backgroundColor = themeColor1;
-  currTimerType = 2;
+  currTimerTypeNum = 2;
   document.getElementById("typeShort").style.backgroundColor = "transparent";
   document.getElementById("typePomo").style.backgroundColor = "transparent";
 
@@ -47,19 +48,19 @@ const longTypeChange = () => {
 };
 
 document.getElementById("typePomo").addEventListener("click", function () {
-  if (currTimerType !== 0) {
+  if (currTimerTypeNum !== 0) {
     pomodoroTypeChange();
   }
 });
 
 document.getElementById("typeShort").addEventListener("click", function () {
-  if (currTimerType !== 1) {
+  if (currTimerTypeNum !== 1) {
     shortTypeChange();
   }
 });
 
 document.getElementById("typeLong").addEventListener("click", function () {
-  if (currTimerType !== 2) {
+  if (currTimerTypeNum !== 2) {
     longTypeChange();
   }
 });
@@ -107,9 +108,11 @@ document.getElementById("settingsButtonContainer").addEventListener("click", fun
   document.getElementById("settingsPageContainer").style.display = "flex";
 });
 
+// Settings font picker
+
 document.getElementById("fontBoxOne").addEventListener("click", function () {
-  if (currFontType !== 0) {
-    currFontType = 0;
+  if (currFontTypeNum !== 0) {
+    currFontTypeNum = 0;
 
     document.getElementById("htmlId").style.fontFamily = "Roboto";
 
@@ -125,8 +128,8 @@ document.getElementById("fontBoxOne").addEventListener("click", function () {
 });
 
 document.getElementById("fontBoxTwo").addEventListener("click", function () {
-  if (currFontType !== 1) {
-    currFontType = 1;
+  if (currFontTypeNum !== 1) {
+    currFontTypeNum = 1;
 
     document.getElementById("htmlId").style.fontFamily = "Montserrat";
 
@@ -142,8 +145,8 @@ document.getElementById("fontBoxTwo").addEventListener("click", function () {
 });
 
 document.getElementById("fontBoxThree").addEventListener("click", function () {
-  if (currFontType !== 2) {
-    currFontType = 2;
+  if (currFontTypeNum !== 2) {
+    currFontTypeNum = 2;
 
     document.getElementById("htmlId").style.fontFamily = "Fira Sans Condensed";
 
@@ -155,5 +158,37 @@ document.getElementById("fontBoxThree").addEventListener("click", function () {
 
     document.getElementById("fontBoxTwo").style.backgroundColor = "#e0e0e0"; // $settingsGrey
     document.getElementById("fontBoxTwo").style.color = "#141414"; // $almost-white
+  }
+});
+
+// Settings color picker
+
+document.getElementById("colorBoxOne").addEventListener("click", function () {
+  if (currColorTypeNum !== 0) {
+    currColorTypeNum = 0;
+
+    document.getElementById("colorCheckRed").style.display = "flex";
+    document.getElementById("colorCheckBlue").style.display = "none";
+    document.getElementById("colorCheckPurple").style.display = "none";
+  }
+});
+
+document.getElementById("colorBoxTwo").addEventListener("click", function () {
+  if (currColorTypeNum !== 1) {
+    currColorTypeNum = 1;
+
+    document.getElementById("colorCheckRed").style.display = "none";
+    document.getElementById("colorCheckBlue").style.display = "flex";
+    document.getElementById("colorCheckPurple").style.display = "none";
+  }
+});
+
+document.getElementById("colorBoxThree").addEventListener("click", function () {
+  if (currColorTypeNum !== 2) {
+    currColorTypeNum = 2;
+
+    document.getElementById("colorCheckRed").style.display = "none";
+    document.getElementById("colorCheckBlue").style.display = "none";
+    document.getElementById("colorCheckPurple").style.display = "flex";
   }
 });

@@ -251,3 +251,54 @@ body {
 #fontBoxThree {
   font-family: "Fira Sans Condensed";
 }
+
+#settingsColorContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#settingsColorChooserContainer {
+  display: flex;
+}
+
+.colorBox {
+  color: $almost-black;
+  cursor: pointer;
+  padding: 10px;
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#colorBoxOne {
+  background-color: $themeRedColor1;
+}
+
+#colorBoxTwo {
+  background-color: $themeBlueColor1;
+}
+
+#colorBoxThree {
+  background-color: $themePurpleColor1;
+}
+
+.colorCheck {
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./public/doneImg.svg");
+  display: none;
+}
+
+#colorCheckRed {
+  display: flex;
+}

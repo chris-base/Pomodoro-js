@@ -306,4 +306,68 @@ body {
 #fontBoxThree {
   font-family: "Fira Sans Condensed";
 }
+
+#settingsColorContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#settingsColorChooserContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.colorBox {
+  color: #141414;
+  cursor: pointer;
+  padding: 10px;
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#colorBoxOne {
+  background-color: #ff6257;
+}
+
+#colorBoxTwo {
+  background-color: #3dffff;
+}
+
+#colorBoxThree {
+  background-color: #e724eb;
+}
+
+.colorCheck {
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./public/doneImg.svg");
+  display: none;
+}
+
+#colorCheckRed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=styles.css.map */
