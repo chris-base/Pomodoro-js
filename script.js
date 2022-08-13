@@ -1,5 +1,6 @@
 var runningInterval = null;
 let timerTime = 25;
+let timesArray = [25, 5, 10];
 var distance = 0;
 let currTimerTypeNum = 0;
 let currFontTypeNum = 0;
@@ -17,7 +18,7 @@ const pomodoroTypeChange = () => {
   clearInterval(runningInterval);
   distance = 0;
 
-  timerTime = 25;
+  timerTime = timesArray[0];
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 };
 
@@ -30,7 +31,7 @@ const shortTypeChange = () => {
   clearInterval(runningInterval);
   distance = 0;
 
-  timerTime = 1;
+  timerTime = timesArray[1];
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 };
 
@@ -43,7 +44,7 @@ const longTypeChange = () => {
   clearInterval(runningInterval);
   distance = 0;
 
-  timerTime = 15;
+  timerTime = timesArray[2];
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 };
 
@@ -195,4 +196,20 @@ document.getElementById("colorBoxThree").addEventListener("click", function () {
     document.getElementById("colorCheckBlue").style.display = "none";
     document.getElementById("colorCheckPurple").style.display = "flex";
   }
+});
+
+// Settings apply clicked
+
+document.getElementById("settingsApplyButton").addEventListener("click", function () {
+  timesArray = [
+    parseInt(document.getElementById("settingsTimeEditPomo").innerHTML),
+    parseInt(document.getElementById("settingsTimeEditShort").innerHTML),
+    parseInt(document.getElementById("settingsTimeEditLong").innerHTML),
+  ];
+
+  timerTime = timesArray[currTimerTypeNum];
+
+  document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
+
+  document.getElementById("settingsPageContainer").style.display = "none";
 });
