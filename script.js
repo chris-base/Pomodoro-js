@@ -119,8 +119,6 @@ document.getElementById("fontBoxOne").addEventListener("click", function () {
   if (currFontTypeNum !== 0) {
     currFontTypeNum = 0;
 
-    document.getElementById("htmlId").style.fontFamily = "Roboto";
-
     document.getElementById("fontBoxOne").style.backgroundColor = "#141414"; // $almost-black
     document.getElementById("fontBoxOne").style.color = "#fafafa"; // $almost-white
 
@@ -136,8 +134,6 @@ document.getElementById("fontBoxTwo").addEventListener("click", function () {
   if (currFontTypeNum !== 1) {
     currFontTypeNum = 1;
 
-    document.getElementById("htmlId").style.fontFamily = "Montserrat";
-
     document.getElementById("fontBoxTwo").style.backgroundColor = "#141414"; // $almost-black
     document.getElementById("fontBoxTwo").style.color = "#fafafa"; // $almost-white
 
@@ -152,8 +148,6 @@ document.getElementById("fontBoxTwo").addEventListener("click", function () {
 document.getElementById("fontBoxThree").addEventListener("click", function () {
   if (currFontTypeNum !== 2) {
     currFontTypeNum = 2;
-
-    document.getElementById("htmlId").style.fontFamily = "Fira Sans Condensed";
 
     document.getElementById("fontBoxThree").style.backgroundColor = "#141414"; // $almost-black
     document.getElementById("fontBoxThree").style.color = "#fafafa"; // $almost-white
@@ -212,4 +206,16 @@ document.getElementById("settingsApplyButton").addEventListener("click", functio
   document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 
   document.getElementById("settingsPageContainer").style.display = "none";
+
+  switch (currFontTypeNum) {
+    case 0:
+      document.getElementById("htmlId").style.fontFamily = "Roboto";
+      break;
+    case 1:
+      document.getElementById("htmlId").style.fontFamily = "Montserrat";
+      break;
+    case 2:
+      document.getElementById("htmlId").style.fontFamily = "Fira Sans Condensed";
+      break;
+  }
 });
