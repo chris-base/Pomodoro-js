@@ -6,6 +6,9 @@ let currTimerTypeNum = 0;
 let currFontTypeNum = 0;
 let currColorTypeNum = 0;
 const themeColor1 = "#ff6257";
+const themeColor2 = "#fff";
+
+const themeColors = { theme0: ["#ff6257"], theme1: ["#fff"], theme2: ["#a2a2a2"] };
 
 document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 
@@ -85,8 +88,6 @@ document.getElementById("timerTimeText").addEventListener("click", function () {
     runningInterval = setInterval(function () {
       var now = new Date().getTime();
       distance = countDownDate - now;
-
-      console.log(distance);
 
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -192,6 +193,12 @@ document.getElementById("colorBoxThree").addEventListener("click", function () {
   }
 });
 
+// Apply Theme colors func
+
+const setThemeColors = (themeType) => {
+  document.getElementById("bodyId").style.backgroundColor = themeColors[themeType];
+};
+
 // Settings apply clicked
 
 document.getElementById("settingsApplyButton").addEventListener("click", function () {
@@ -218,4 +225,6 @@ document.getElementById("settingsApplyButton").addEventListener("click", functio
       document.getElementById("htmlId").style.fontFamily = "Fira Sans Condensed";
       break;
   }
+
+  setThemeColors("theme" + currColorTypeNum);
 });
