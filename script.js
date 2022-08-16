@@ -4,16 +4,14 @@ let timesArray = [25, 5, 10];
 var distance = 0;
 let currTimerTypeNum = 0;
 let currFontTypeNum = 0;
-let currColorTypeNum = 0;
-const themeColor1 = "#ff6257";
-const themeColor2 = "#fff";
+let currColorTypeNum = "theme0";
 
-const themeColors = { theme0: ["#ff6257"], theme1: ["#fff"], theme2: ["#a2a2a2"] };
+const themeColors = { theme0: ["#ff6257"], theme1: ["#4530ff"], theme2: ["#e724eb"] };
 
 document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 
 const pomodoroTypeChange = () => {
-  document.getElementById("typePomo").style.backgroundColor = themeColor1;
+  document.getElementById("typePomo").style.backgroundColor = themeColors[currColorTypeNum];
   currTimerTypeNum = 0;
   document.getElementById("typeShort").style.backgroundColor = "transparent";
   document.getElementById("typeLong").style.backgroundColor = "transparent";
@@ -26,7 +24,7 @@ const pomodoroTypeChange = () => {
 };
 
 const shortTypeChange = () => {
-  document.getElementById("typeShort").style.backgroundColor = themeColor1;
+  document.getElementById("typeShort").style.backgroundColor = themeColors[currColorTypeNum];
   currTimerTypeNum = 1;
   document.getElementById("typePomo").style.backgroundColor = "transparent";
   document.getElementById("typeLong").style.backgroundColor = "transparent";
@@ -39,7 +37,7 @@ const shortTypeChange = () => {
 };
 
 const longTypeChange = () => {
-  document.getElementById("typeLong").style.backgroundColor = themeColor1;
+  document.getElementById("typeLong").style.backgroundColor = themeColors[currColorTypeNum];
   currTimerTypeNum = 2;
   document.getElementById("typeShort").style.backgroundColor = "transparent";
   document.getElementById("typePomo").style.backgroundColor = "transparent";
@@ -164,8 +162,8 @@ document.getElementById("fontBoxThree").addEventListener("click", function () {
 // Settings color picker
 
 document.getElementById("colorBoxOne").addEventListener("click", function () {
-  if (currColorTypeNum !== 0) {
-    currColorTypeNum = 0;
+  if (currColorTypeNum !== "theme0") {
+    currColorTypeNum = "theme0";
 
     document.getElementById("colorCheckRed").style.display = "flex";
     document.getElementById("colorCheckBlue").style.display = "none";
@@ -174,8 +172,8 @@ document.getElementById("colorBoxOne").addEventListener("click", function () {
 });
 
 document.getElementById("colorBoxTwo").addEventListener("click", function () {
-  if (currColorTypeNum !== 1) {
-    currColorTypeNum = 1;
+  if (currColorTypeNum !== "theme1") {
+    currColorTypeNum = "theme1";
 
     document.getElementById("colorCheckRed").style.display = "none";
     document.getElementById("colorCheckBlue").style.display = "flex";
@@ -184,8 +182,8 @@ document.getElementById("colorBoxTwo").addEventListener("click", function () {
 });
 
 document.getElementById("colorBoxThree").addEventListener("click", function () {
-  if (currColorTypeNum !== 2) {
-    currColorTypeNum = 2;
+  if (currColorTypeNum !== "theme2") {
+    currColorTypeNum = "theme2";
 
     document.getElementById("colorCheckRed").style.display = "none";
     document.getElementById("colorCheckBlue").style.display = "none";
@@ -195,8 +193,17 @@ document.getElementById("colorBoxThree").addEventListener("click", function () {
 
 // Apply Theme colors func
 
-const setThemeColors = (themeType) => {
-  document.getElementById("bodyId").style.backgroundColor = themeColors[themeType];
+const setThemeColors = () => {
+  // document.getElementById("bodyId").style.backgroundColor = themeColors[currColorTypeNum];
+  document.getElementById("settingsApplyButton").style.backgroundColor = themeColors[currColorTypeNum];
+
+  if (currTimerTypeNum === 0) {
+    document.getElementById("typePomo").style.backgroundColor = themeColors[currColorTypeNum];
+  } else if (currTimerTypeNum === 1) {
+    document.getElementById("typeShort").style.backgroundColor = themeColors[currColorTypeNum];
+  } else if (currTimerTypeNum === 2) {
+    document.getElementById("typeLong").style.backgroundColor = themeColors[currColorTypeNum];
+  }
 };
 
 // Settings apply clicked
@@ -226,5 +233,5 @@ document.getElementById("settingsApplyButton").addEventListener("click", functio
       break;
   }
 
-  setThemeColors("theme" + currColorTypeNum);
+  setThemeColors();
 });
