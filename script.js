@@ -6,12 +6,12 @@ let currTimerTypeNum = 0;
 let currFontTypeNum = 0;
 let currColorTypeNum = "theme0";
 
-const themeColors = { theme0: ["#ff6257"], theme1: ["#4530ff"], theme2: ["#e724eb"] };
+const themeColors = { theme0: ["#ff6257", "#2f3169", "#21234a"], theme1: ["#4530ff", "#f56b38", "#c2532b"], theme2: ["#e724eb"] };
 
 document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
 
 const pomodoroTypeChange = () => {
-  document.getElementById("typePomo").style.backgroundColor = themeColors[currColorTypeNum];
+  document.getElementById("typePomo").style.backgroundColor = themeColors[currColorTypeNum][0];
   currTimerTypeNum = 0;
   document.getElementById("typeShort").style.backgroundColor = "transparent";
   document.getElementById("typeLong").style.backgroundColor = "transparent";
@@ -24,7 +24,7 @@ const pomodoroTypeChange = () => {
 };
 
 const shortTypeChange = () => {
-  document.getElementById("typeShort").style.backgroundColor = themeColors[currColorTypeNum];
+  document.getElementById("typeShort").style.backgroundColor = themeColors[currColorTypeNum][0];
   currTimerTypeNum = 1;
   document.getElementById("typePomo").style.backgroundColor = "transparent";
   document.getElementById("typeLong").style.backgroundColor = "transparent";
@@ -37,7 +37,7 @@ const shortTypeChange = () => {
 };
 
 const longTypeChange = () => {
-  document.getElementById("typeLong").style.backgroundColor = themeColors[currColorTypeNum];
+  document.getElementById("typeLong").style.backgroundColor = themeColors[currColorTypeNum][0];
   currTimerTypeNum = 2;
   document.getElementById("typeShort").style.backgroundColor = "transparent";
   document.getElementById("typePomo").style.backgroundColor = "transparent";
@@ -195,14 +195,17 @@ document.getElementById("colorBoxThree").addEventListener("click", function () {
 
 const setThemeColors = () => {
   // document.getElementById("bodyId").style.backgroundColor = themeColors[currColorTypeNum];
-  document.getElementById("settingsApplyButton").style.backgroundColor = themeColors[currColorTypeNum];
+  document.getElementById("settingsApplyButton").style.backgroundColor = themeColors[currColorTypeNum][0];
+  document.getElementById("bodyId").style.backgroundColor = themeColors[currColorTypeNum][1];
+  document.getElementById("timerContainer").style.backgroundColor = themeColors[currColorTypeNum][2];
+  document.getElementById("timerTextContainer").style.backgroundColor = themeColors[currColorTypeNum][2];
 
   if (currTimerTypeNum === 0) {
-    document.getElementById("typePomo").style.backgroundColor = themeColors[currColorTypeNum];
+    document.getElementById("typePomo").style.backgroundColor = themeColors[currColorTypeNum][0];
   } else if (currTimerTypeNum === 1) {
-    document.getElementById("typeShort").style.backgroundColor = themeColors[currColorTypeNum];
+    document.getElementById("typeShort").style.backgroundColor = themeColors[currColorTypeNum][0];
   } else if (currTimerTypeNum === 2) {
-    document.getElementById("typeLong").style.backgroundColor = themeColors[currColorTypeNum];
+    document.getElementById("typeLong").style.backgroundColor = themeColors[currColorTypeNum][0];
   }
 };
 
