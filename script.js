@@ -1,6 +1,5 @@
 var runningInterval = null;
-let timerTime = 25;
-let timesArray = [25, 5, 10];
+let timesArray = [25, 1, 10];
 var distance = 0;
 let currTimerTypeNum = 0;
 let currFontTypeNum = 0;
@@ -8,7 +7,7 @@ let currColorTypeNum = "theme0";
 
 const themeColors = { theme0: ["#ff6257", "#2f3169", "#21234a"], theme1: ["#4530ff", "#f56b38", "#c2532b"], theme2: ["#e724eb"] };
 
-document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
+document.getElementById("timerTimeText").innerHTML = timesArray[currTimerTypeNum] + ":00";
 
 const pomodoroTypeChange = () => {
   document.getElementById("typePomo").style.backgroundColor = themeColors[currColorTypeNum][0];
@@ -19,8 +18,8 @@ const pomodoroTypeChange = () => {
   clearInterval(runningInterval);
   distance = 0;
 
-  timerTime = timesArray[0];
-  document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
+  document.getElementById("timerStartStopText").innerHTML = "Start";
+  document.getElementById("timerTimeText").innerHTML = timesArray[currTimerTypeNum] + ":00";
 };
 
 const shortTypeChange = () => {
@@ -32,8 +31,8 @@ const shortTypeChange = () => {
   clearInterval(runningInterval);
   distance = 0;
 
-  timerTime = timesArray[1];
-  document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
+  document.getElementById("timerStartStopText").innerHTML = "Start";
+  document.getElementById("timerTimeText").innerHTML = timesArray[currTimerTypeNum] + ":00";
 };
 
 const longTypeChange = () => {
@@ -45,8 +44,8 @@ const longTypeChange = () => {
   clearInterval(runningInterval);
   distance = 0;
 
-  timerTime = timesArray[2];
-  document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
+  document.getElementById("timerStartStopText").innerHTML = "Start";
+  document.getElementById("timerTimeText").innerHTML = timesArray[currTimerTypeNum] + ":00";
 };
 
 document.getElementById("typePomo").addEventListener("click", function () {
@@ -75,7 +74,7 @@ document.getElementById("timerTimeText").addEventListener("click", function () {
   } else {
     document.getElementById("timerStartStopText").innerHTML = "Stop";
 
-    var minToMilli = 60000 * timerTime;
+    var minToMilli = 60000 * timesArray[currTimerTypeNum] + 995;
 
     if (distance <= 0) {
       var countDownDate = new Date().getTime() + minToMilli;
@@ -95,6 +94,8 @@ document.getElementById("timerTimeText").addEventListener("click", function () {
       } else {
         document.getElementById("timerTimeText").innerHTML = minutes + ":" + seconds;
       }
+
+      console.log(distance);
 
       if (distance < 0) {
         clearInterval(runningInterval);
@@ -199,6 +200,7 @@ const setThemeColors = () => {
   document.getElementById("bodyId").style.backgroundColor = themeColors[currColorTypeNum][1];
   document.getElementById("timerContainer").style.backgroundColor = themeColors[currColorTypeNum][2];
   document.getElementById("timerTextContainer").style.backgroundColor = themeColors[currColorTypeNum][2];
+  document.getElementById("timerTypeContainer").style.backgroundColor = themeColors[currColorTypeNum][2];
 
   if (currTimerTypeNum === 0) {
     document.getElementById("typePomo").style.backgroundColor = themeColors[currColorTypeNum][0];
@@ -218,9 +220,7 @@ document.getElementById("settingsApplyButton").addEventListener("click", functio
     parseInt(document.getElementById("settingsTimeEditLong").innerHTML),
   ];
 
-  timerTime = timesArray[currTimerTypeNum];
-
-  document.getElementById("timerTimeText").innerHTML = timerTime + ":00";
+  document.getElementById("timerTimeText").innerHTML = timesArray[currTimerTypeNum] + ":00";
 
   document.getElementById("settingsPageContainer").style.display = "none";
 
