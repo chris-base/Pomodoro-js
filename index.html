@@ -54,17 +54,22 @@
         <div id="settingsTimesContainer">
           <div class="settingsTimeContainer">
             <p class="settingsTimeTitleText">pomodoro</p>
-            <div id="settingsTimeEditPomo" class="settingsTimeEditText" contenteditable="true">25</div>
+            <div id="settingsTimeEditPomo" class="settingsTimeEditText" contenteditable="true" onkeypress="return (this.innerText.length <= 3)"></div>
           </div>
 
           <div class="settingsTimeContainer">
             <p class="settingsTimeTitleText">short break</p>
-            <div id="settingsTimeEditShort" class="settingsTimeEditText" contenteditable="true">5</div>
+            <div
+              id="settingsTimeEditShort"
+              class="settingsTimeEditText"
+              contenteditable="true"
+              onkeypress="return (this.innerText.length <= 3)"
+            ></div>
           </div>
 
           <div class="settingsTimeContainer">
             <p class="settingsTimeTitleText">long break</p>
-            <div id="settingsTimeEditLong" class="settingsTimeEditText" contenteditable="true">10</div>
+            <div id="settingsTimeEditLong" class="settingsTimeEditText" contenteditable="true" onkeypress="return (this.innerText.length <= 3)"></div>
           </div>
         </div>
 

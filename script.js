@@ -106,6 +106,10 @@ document.getElementById("timerTimeText").addEventListener("click", function () {
 });
 
 document.getElementById("settingsButtonContainer").addEventListener("click", function () {
+  document.getElementById("settingsTimeEditPomo").innerHTML = timesArray[0];
+  document.getElementById("settingsTimeEditShort").innerHTML = timesArray[1];
+  document.getElementById("settingsTimeEditLong").innerHTML = timesArray[2];
+
   document.getElementById("settingsPageContainer").style.display = "flex";
 });
 
@@ -214,11 +218,17 @@ const setThemeColors = () => {
 // Settings apply clicked
 
 document.getElementById("settingsApplyButton").addEventListener("click", function () {
-  timesArray = [
-    parseInt(document.getElementById("settingsTimeEditPomo").innerHTML),
-    parseInt(document.getElementById("settingsTimeEditShort").innerHTML),
-    parseInt(document.getElementById("settingsTimeEditLong").innerHTML),
-  ];
+  if (!isNaN(parseInt(document.getElementById("settingsTimeEditPomo").innerHTML))) {
+    timesArray[0] = parseInt(document.getElementById("settingsTimeEditPomo").innerHTML);
+  }
+
+  if (!isNaN(parseInt(document.getElementById("settingsTimeEditShort").innerHTML))) {
+    timesArray[1] = parseInt(document.getElementById("settingsTimeEditShort").innerHTML);
+  }
+
+  if (!isNaN(parseInt(document.getElementById("settingsTimeEditLong").innerHTML))) {
+    timesArray[2] = parseInt(document.getElementById("settingsTimeEditLong").innerHTML);
+  }
 
   document.getElementById("timerTimeText").innerHTML = timesArray[currTimerTypeNum] + ":00";
 
