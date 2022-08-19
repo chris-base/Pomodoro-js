@@ -1,11 +1,15 @@
 var runningInterval = null;
-let timesArray = [25, 1, 10];
+let timesArray = [25, 5, 10];
 var distance = 0;
 let currTimerTypeNum = 0;
 let currFontTypeNum = 0;
 let currColorTypeNum = "theme0";
 
-const themeColors = { theme0: ["#ff6257", "#2f3169", "#21234a"], theme1: ["#4530ff", "#f56b38", "#c2532b"], theme2: ["#e724eb"] };
+const themeColors = {
+  theme0: ["#ff6257", "#2f3169", "#21234a"],
+  theme1: ["#4530ff", "#f56b38", "#c2532b"],
+  theme2: ["#e724eb", "#8424EB", "#6B12CA"],
+};
 
 document.getElementById("timerTimeText").innerHTML = timesArray[currTimerTypeNum] + ":00";
 
