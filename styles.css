@@ -130,6 +130,21 @@ body {
   letter-spacing: 10px;
 }
 
+#pomoInfoText {
+  margin-top: 25px;
+}
+
+#pomoInfoText a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+#pomoInfoText a:hover {
+  opacity: 0.5;
+}
+
 #settingsButtonContainer {
   cursor: pointer;
   opacity: 0.5;

@@ -96,6 +96,21 @@ body {
   letter-spacing: 10px;
 }
 
+#pomoInfoText {
+  margin-top: 25px;
+
+  a {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+}
+
 // SETTINGS
 
 #settingsButtonContainer {
