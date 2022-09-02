@@ -4,7 +4,7 @@ This is a solution to the [Pomodoro app challenge on Frontend Mentor](https://ww
 
 ### Screenshot
 
-![]()
+![](./public/pomodoro-screenshot.png)
 
 ## Links
 
